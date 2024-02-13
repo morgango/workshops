@@ -4,7 +4,7 @@ from os import environ
 from openai import OpenAI
 
 # load our environment file
-load_dotenv(dotenv_path="/Users/morgan/dev/workshops/prompting/.env")
+load_dotenv(dotenv_path="../.env")
 
 client = OpenAI(api_key=os.environ['OPENAI_API_KEY'])
 
