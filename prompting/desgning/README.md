@@ -1,18 +1,28 @@
-A good job for Generative AI is classifying text.
+A good job for Generative AI is  generating customized text.
 
 This is a code example of exactly how you can do this with OpenAI.
 
-This example will:
+These examples will:
 
-1. Read in a lists of different types from the `hero.txt`, `location.txt`, and `subject.txt` files.
-2. Process it using the instructions from the `system-prompt.txt` and `user-prompt.txt` file.
-3. Use OpenAI to generate a story.
+1. Read parts of the prompt from input files:
+   *  `length.txt`
+   *  `location.txt`
+   *  `mentions.txt`
+   *  `nickname.txt`
+   *  `shots.txt`
+   *  `start.txt`
+2. Process it using the instructions from the files:
+   * `system-prompt.txt`
+   * `user-prompt-simple.txt`
+   * `user-prompt-refined.txt`
+   * `user-prompt-complete.txt`
+3. Use OpenAI to generate the text.
 4. Output the results to the `results.txt` file.
 
-Processing is done by running the commmand `python storytelling.py` or by running the `storytelling.py` file in a debugger.
+Processing is done by running the commmand `designing-simple.py`, `desigining-refined.py`, or `designing-complete.py` in python or in a debugger.
 
 __NOTES__
 
-* All of the python code resides in the `storytelling.py` file and in the `common.py` library.
+* All of the python code resides in the files `designing-simple.py`, `desigining-refined.py`, and `designing-complete.py` files and in the `workplace_common` library.
 * Any of the configurations (API keys, etc. are handled automatically)
 

@@ -1,0 +1,6 @@
+# Write a simple prompt to ask about a location.
+#
+# For example: 
+#   Tell me about {location}.
+
+Tell me about {location}

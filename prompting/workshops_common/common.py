@@ -4,11 +4,10 @@ from os import environ
 from openai import OpenAI
 
 # load our environment file
-load_dotenv()
+load_dotenv(dotenv_path="/Users/morgan/dev/workshops/prompting/.env")
 
 client = OpenAI(api_key=os.environ['OPENAI_API_KEY'])
 
-from icecream import ic
 from typing import List, Dict, Any
 
 open_ai_models = ['text-search-babbage-doc-001', 'gpt-3.5-turbo-16k-0613', 'gpt-3.5-turbo-0613', 'curie-search-query', 'gpt-3.5-turbo', 'gpt-3.5-turbo-16k', 'text-search-babbage-query-001', 'babbage', 'babbage-search-query', 'text-babbage-001', 'fanw-json-eval', 'whisper-1', 'text-similarity-davinci-001', 'gpt-4', 'davinci', 'davinci-similarity', 'code-davinci-edit-001', 'curie-similarity', 'babbage-search-document', 'curie-instruct-beta', 'text-search-ada-doc-001', 'davinci-instruct-beta', 'text-similarity-babbage-001', 'text-search-davinci-doc-001', 'gpt-4-0314', 'babbage-similarity', 'davinci-search-query', 'text-similarity-curie-001', 'text-davinci-001', 'text-search-davinci-query-001', 'ada-search-document', 'ada-code-search-code', 'babbage-002', 'gpt-4-0613', 'davinci-002', 'davinci-search-document', 'curie-search-document', 'babbage-code-search-code', 'text-search-ada-query-001', 'code-search-ada-text-001', 'babbage-code-search-text', 'code-search-babbage-code-001', 'ada-search-query', 'ada-code-search-text', 'text-search-curie-query-001', 'text-davinci-002', 'text-embedding-ada-002', 'text-davinci-edit-001', 'code-search-babbage-text-001', 'gpt-3.5-turbo-instruct-0914', 'ada', 'text-ada-001', 'ada-similarity', 'code-search-ada-code-001', 'text-similarity-ada-001', 'gpt-3.5-turbo-0301', 'gpt-3.5-turbo-instruct', 'text-search-curie-doc-001', 'text-davinci-003', 'text-curie-001', 'curie']
@@ -41,13 +40,6 @@ def simple_chat(messages: List[Dict[str, Any]], model: str = 'gpt-3.5-turbo', te
 
     return response
 
-def show_response_detail(response):
-    
-    ic({response.choices[0].message.role})
-    ic({response.choices[0].message.content})
-    ic({response.usage.prompt_tokens})
-    ic({response.usage.completion_tokens})
-    ic({response.usage.total_tokens})
 
 def simple_chat(messages: List[Dict[str, Any]], model: str = 'gpt-3.5-turbo', temperature: float = 0.9, max_tokens: int = 1024) -> str:
 
@@ -77,8 +69,8 @@ def get_file_contents(file_path: str, return_as_list: bool = False):
         # Read all lines from the file
         lines = file.readlines()
 
-        # Filter out lines starting with #
-        lines = [line.strip() for line in lines if not line.startswith('#')]
+        # Filter out lines starting with # and blank lines
+        lines = [line.strip() for line in lines if not line.startswith('#') and line.strip()]
 
         # Join all lines into a single string or return as a list
         if return_as_list:
@@ -108,3 +100,9 @@ def set_local_directory():
     
     # Change the current working directory to the directory of the caller's script
     os.chdir(caller_script_directory)
+
+def append_line_to_file(file_path: str, line: str):
+    # Open the file in append mode
+    with open(file_path, 'a') as file:
+        # Append the line to the file
+        file.write(line + '\n')

@@ -1,0 +1,15 @@
+# Refine your prompt to include all the components of a well designed prompt:
+# instruction, input data, and output format.
+#
+#For example: 
+#   Tell me about {location} in {length} paragraphs. 
+#   Talk about {mentions}
+#
+#   Give this writeup a title and output the text as {format} .
+
+
+Tell me about {location} in {length}. 
+
+Talk about {mentions}
+
+Give this writeup a title and output the text as {format} .

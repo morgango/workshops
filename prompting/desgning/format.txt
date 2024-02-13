@@ -1,1 +1,4 @@
-JSON
+# Examples:
+#   Plain text
+#   Markdown
+#   JSON

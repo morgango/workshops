@@ -1,0 +1,4 @@
+# Examples
+#   Conditional logic: If the detective were to encounter a false lead, describe how they would navigate through it to ultimately solve the murder case."
+#   Adjusting language: Include a shakespearian sonnet at some point in the text.
+

@@ -1,0 +1,46 @@
+############################################################################
+# Put it all together - Instruction, Input Data, Context, and Formatting.
+# - Break your instructions into smaller pieces.
+# - Take a few shots at how you would like things to work.
+# - Give formatting instructions.
+# - Add leading text.
+############################################################################
+#
+# For example:
+# 
+#   Tell me about {location} in X paragraphs.
+# 
+#   Make sure to mention:
+#   {mentions}
+#
+#
+#   {instructions}
+#
+#   Here are some examples of what to talk about:
+#   {shots}
+#
+#   Give this writeup a title and output the text as {format}.
+#
+#   {location} - also known {nickname}
+#
+############################################################################
+# Experiment a few times with different models, temperatures, and max_tokens.  Also, try adjusting the system instructions.
+#
+# Take a look at the parameters again and see if you want to adjust them.
+############################################################################
+
+Tell me about {location} in X paragraphs.
+
+Make sure to mention:
+{mentions}
+
+
+{instructions}
+
+Here are some examples of what to talk about:
+{shots}
+
+Give this writeup a title and output the text as {format}.
+
+{location} - also known {nickname}
+

@@ -13,6 +13,6 @@ Processing is done by running the commmand `python storytelling.py` or by runnin
 
 __NOTES__
 
-* All of the python code resides in the `storytelling.py` file and in the `common.py` library.
+* All of the python code resides in the `storytelling.py` file and in the `workplace_common` library.
 * Any of the configurations (API keys, etc. are handled automatically)
 

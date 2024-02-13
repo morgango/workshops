@@ -1,4 +1,4 @@
-from common import set_local_directory, simple_chat, get_file_contents, write_response_to_file, append_line_to_file
+from workshops_common import set_local_directory, simple_chat, get_file_contents, write_response_to_file, append_line_to_file
 
 # make sure python is looking in the right spot for the files we need.
 set_local_directory()
@@ -11,11 +11,6 @@ simple_chat_args = {
     'max_tokens': 2000,
 }
 
-# # Get a really long file to deal with
-# user_message_content = get_file_contents('user-prompt.txt')
-
-# # Tell how to deal with the file
-# system_message_content = get_file_contents('system-prompt.txt')
  
 system_message_content = get_file_contents('system-prompt.txt')
 flowers = get_file_contents('flowers-list.txt', return_as_list=True)
@@ -29,7 +24,7 @@ everything = flowers + people + food
 system_message = {"role": "system", 
                   "content": system_message_content}
 
-append_line_to_file('classification-results.txt', "-------")
+append_line_to_file('results-refined.txt', "-------")
 
 # Iterate over each item in the 'everything' list
 for item in everything:
@@ -43,11 +38,11 @@ for item in everything:
     
     # Send the system and user messages to and get back a classification response
     classification_response = simple_chat(messages=[system_message, 
-                                                    user_message_content], 
+                                                    user_message], 
                                           **simple_chat_args)
     
     # Extract the content of the response which contains the classification
     classification = classification_response.choices[0].message.content
     
     results = f"item: {item}, classification: {classification}"
-    append_line_to_file('results.txt', results)
+    append_line_to_file('results-refined.txt', results)

@@ -11,5 +11,5 @@ Processing is done by running the commmand `python generate_csv.py` or by runnin
 
 __NOTES__
 
-* All of the python code resides in the `generate_csv.py` file and in the `common.py` library.
+* All of the python code resides in the `generate_csv.py` file and in the `workplace_common` library.
 * Any of the configurations (API keys, etc. are handled automatically)
