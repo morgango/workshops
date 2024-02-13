@@ -1,0 +1,1 @@
+Classify as one or more types: flower, people, food, or other.

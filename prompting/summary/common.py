@@ -71,19 +71,40 @@ def simple_chat(messages: List[Dict[str, Any]], model: str = 'gpt-3.5-turbo', te
 
     return response
 
-def get_file_contents(file_path: str) -> str:
+def get_file_contents(file_path: str, return_as_list: bool = False):
     # Open the file in read mode
     with open(file_path, 'r') as file:
         # Read all lines from the file
         lines = file.readlines()
 
-        # Join all lines into a single string
-        long_message = ''.join(lines)
+        # Filter out lines starting with #
+        lines = [line.strip() for line in lines if not line.startswith('#')]
 
-    return long_message
+        # Join all lines into a single string or return as a list
+        if return_as_list:
+            return lines
+        else:
+            return ''.join(lines)
+
 
 def write_response_to_file(response, file_path: str):
     # Open the file in write mode
     with open(file_path, 'w') as file:
         # Write the content to the file
         file.write(response.choices[0].message.content)
+
+def set_local_directory():
+    import os
+    import inspect
+
+    # Get the caller's frame
+    caller_frame = inspect.stack()[1]
+    
+    # Get the path of the caller's script
+    caller_script_path = caller_frame.filename
+    
+    # Get the directory of the caller's script
+    caller_script_directory = os.path.dirname(os.path.realpath(caller_script_path))
+    
+    # Change the current working directory to the directory of the caller's script
+    os.chdir(caller_script_directory)

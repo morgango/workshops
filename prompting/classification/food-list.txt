@@ -1,0 +1,6 @@
+# Add different types of food here, each entry on its own line.
+
+Ham
+Turkey
+Samosas
+Cookies

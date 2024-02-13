@@ -1,0 +1,1 @@
+Our story is about {subject}, it takes place in {location}, and our hero's name is {hero}.

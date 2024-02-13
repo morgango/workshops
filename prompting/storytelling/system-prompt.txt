@@ -1,0 +1,3 @@
+Generate a three paragraph story about a subject that takes place in a location with a hero.
+
+If any elements are misssing, you can make them up.
