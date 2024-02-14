@@ -6,7 +6,7 @@ from openai import OpenAI
 # load our environment file
 load_dotenv(dotenv_path="../.env")
 
-client = OpenAI(api_key=os.environ['OPENAI_API_KEY'])
+# client = OpenAI(api_key=os.environ['OPENAI_API_KEY'])
 
 from typing import List, Dict, Any
 
