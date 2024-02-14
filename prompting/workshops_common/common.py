@@ -6,7 +6,7 @@ from openai import OpenAI
 # load our environment file
 load_dotenv(dotenv_path="../.env")
 
-# client = OpenAI(api_key=os.environ['OPENAI_API_KEY'])
+client = OpenAI(api_key=os.environ['OPENAI_API_KEY'])
 
 from typing import List, Dict, Any
 
@@ -40,28 +40,6 @@ def simple_chat(messages: List[Dict[str, Any]], model: str = 'gpt-3.5-turbo', te
 
     return response
 
-
-def simple_chat(messages: List[Dict[str, Any]], model: str = 'gpt-3.5-turbo', temperature: float = 0.9, max_tokens: int = 1024) -> str:
-
-    if not messages:
-        raise ValueError("Input messages list cannot be empty.")
-
-    # Check if all messages are in the correct format.
-    if not are_valid_messages(messages):
-        raise ValueError("Input messages must be in the format [{'role': str, 'content': str}, ...]")
-
-    if model not in open_ai_models:
-        raise ValueError(f"{model} is not a valid model name.")
-
-    # Send the messages to OpenAI and get the response
-    response = client.chat.completions.create(
-        model=model,
-        messages=messages,
-        temperature=temperature,
-        max_tokens=max_tokens
-    )
-
-    return response
 
 def get_file_contents(file_path: str, return_as_list: bool = False):
     # Open the file in read mode
