@@ -1,4 +1,4 @@
-from workshops_common import set_local_directory, simple_chat, get_file_contents, write_response_to_file
+from workshops_common import set_local_directory, simple_chat, get_file_contents, get_file_size, write_response_to_file
 
 # make sure python is looking in the right spot for the files we need.
 set_local_directory()
@@ -35,3 +35,8 @@ summary_response = simple_chat(messages=[system_message,
 write_response_to_file(file_path='results.txt', 
                        response=summary_response)
 
+prompt_size = get_file_size('user-prompt.txt')
+result_size = get_file_size('results.txt')
+
+results_string = f"The prompt was {prompt_size} bytes, and the summarized result was {result_size} bytes."
+print(results_string)

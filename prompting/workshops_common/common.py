@@ -84,3 +84,10 @@ def append_line_to_file(file_path: str, line: str):
     with open(file_path, 'a') as file:
         # Append the line to the file
         file.write(line + '\n')
+
+def get_file_size(file_path: str) -> int:
+    with open(file_path, 'rb') as file:
+        file_bytes = file.read()
+    return len(file_bytes)
+
+
