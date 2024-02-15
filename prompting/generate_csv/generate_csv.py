@@ -1,4 +1,4 @@
-from workshops_common import set_local_directory, simple_chat, get_file_contents, write_response_to_file, append_line_to_file
+from workshops_common import set_local_directory, simple_chat, get_file_contents, write_response_to_file, get_file_lines
 
 # make sure python is looking in the right spot for the files we need.
 set_local_directory()
@@ -27,3 +27,9 @@ csv_response = simple_chat(messages=[system_message,
 # write the response to a file
 write_response_to_file(file_path='results.csv', 
                        response=csv_response)
+
+# get the size of the prompt and the result
+result_size = get_file_lines('results.txt')
+
+results_string = f"We generated {result_size} lines of CSV data."
+print(results_string)
