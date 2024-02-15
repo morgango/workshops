@@ -29,12 +29,11 @@ summary_response = simple_chat(messages=[system_message,
                                **simple_chat_args)
 
 
-# log our results
-
 # write the response to a file
 write_response_to_file(file_path='results.txt', 
                        response=summary_response)
 
+# get the size of the prompt and the result
 prompt_size = get_file_size('user-prompt.txt')
 result_size = get_file_size('results.txt')
 
