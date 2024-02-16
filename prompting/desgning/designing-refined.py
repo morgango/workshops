@@ -41,5 +41,6 @@ story_response = simple_chat(messages=[system_message,
 write_response_to_file(file_path='results-refined.txt', 
                        response=story_response)
 
+# log output the results
 ic(location, format, length, mentions)
 ic(story_response.choices[0].message.content)

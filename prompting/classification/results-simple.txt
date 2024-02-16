@@ -6,3 +6,11 @@ item: Rose, classification: flower
 item: Alice, classification: people
 item: Bob, classification: people
 item: Carla, classification: people
+-------
+item: Sunflower, classification: flower
+item: Carnation, classification: flower
+item: Bluebonnet, classification: flower
+item: Rose, classification: flower
+item: Alice, classification: people
+item: Bob, classification: people
+item: Carla, classification: people

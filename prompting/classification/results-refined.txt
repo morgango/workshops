@@ -10,3 +10,15 @@ item: Ham, classification: food
 item: Turkey, classification: food
 item: Samosas, classification: food
 item: Cookies, classification: food
+-------
+item: Sunflower, classification: flower
+item: Carnation, classification: flower
+item: Bluebonnet, classification: flower
+item: Rose, classification: flower
+item: Alice, classification: people
+item: Bob, classification: people
+item: Carla, classification: people
+item: Ham, classification: food
+item: Turkey, classification: food
+item: Samosas, classification: food
+item: Cookies, classification: food

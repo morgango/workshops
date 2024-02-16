@@ -36,5 +36,6 @@ write_response_to_file(file_path='results-simple.txt',
                        response=story_response)
 
 
+# log output the results
 ic(location)
 ic(story_response.choices[0].message.content)

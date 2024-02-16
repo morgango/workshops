@@ -39,5 +39,6 @@ story_response = simple_chat(messages=[system_message,
 write_response_to_file(file_path='results.txt', 
                        response=story_response)
 
+# log output the results
 result_size = get_file_size('results.txt')
 ic(subject, hero, location, result_size)

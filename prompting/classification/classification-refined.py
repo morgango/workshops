@@ -1,5 +1,5 @@
 from workshops_common import set_local_directory, simple_chat, get_file_contents, write_response_to_file, append_line_to_file
-
+from icecream import ic
 # make sure python is looking in the right spot for the files we need.
 set_local_directory()
 
@@ -26,6 +26,8 @@ system_message = {"role": "system",
 
 append_line_to_file('results-refined.txt', "-------")
 
+ic(flowers, people, food)
+
 # Iterate over each item in the 'everything' list
 for item in everything:
     
@@ -46,3 +48,6 @@ for item in everything:
     
     results = f"item: {item}, classification: {classification}"
     append_line_to_file('results-refined.txt', results)
+    
+    # log results to screen
+    ic(item, classification)
