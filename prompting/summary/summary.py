@@ -1,7 +1,9 @@
 from workshops_common import set_local_directory, simple_chat, get_file_contents, get_file_size, write_response_to_file
+from icecream import ic
 
 # make sure python is looking in the right spot for the files we need.
 set_local_directory()
+
 
 # these are arguments that can be pre-defined and passed to the simple_chat function.
 # they can be changed as needed. 
@@ -37,5 +39,4 @@ write_response_to_file(file_path='results.txt',
 prompt_size = get_file_size('user-prompt.txt')
 result_size = get_file_size('results.txt')
 
-results_string = f"The prompt was {prompt_size} bytes, and the summarized result was {result_size} bytes."
-print(results_string)
+ic(prompt_size, result_size)

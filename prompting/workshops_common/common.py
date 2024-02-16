@@ -2,6 +2,7 @@ from dotenv import load_dotenv
 import os
 from os import environ
 from openai import OpenAI
+from icecream import ic
 
 # load our environment file
 load_dotenv(dotenv_path="../.env")

@@ -1,4 +1,5 @@
 from workshops_common import set_local_directory, simple_chat, get_file_contents, write_response_to_file, get_file_size
+from icecream import ic
 
 # make sure python is looking in the right spot for the files we need.
 set_local_directory()
@@ -39,5 +40,4 @@ write_response_to_file(file_path='results.txt',
                        response=story_response)
 
 result_size = get_file_size('results.txt')
-results_string = f"We generated a story about {subject} and {hero} in {location}. The story is {result_size} bytes."
-print(results_string)
+ic(subject, hero, location, result_size)

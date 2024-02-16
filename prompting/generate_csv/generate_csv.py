@@ -1,4 +1,5 @@
 from workshops_common import set_local_directory, simple_chat, get_file_contents, write_response_to_file, get_file_lines
+from icecream import ic
 
 # make sure python is looking in the right spot for the files we need.
 set_local_directory()
@@ -31,5 +32,4 @@ write_response_to_file(file_path='results.csv',
 # get the size of the prompt and the result
 result_size = get_file_lines('results.txt')
 
-results_string = f"We generated {result_size} lines of CSV data."
-print(results_string)
+ic(result_size)

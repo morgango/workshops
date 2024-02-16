@@ -1,4 +1,5 @@
 from workshops_common import set_local_directory, simple_chat, get_file_contents, write_response_to_file
+from icecream import ic
 
 # make sure python is looking in the right spot for the files we need.
 set_local_directory()
@@ -47,3 +48,6 @@ story_response = simple_chat(messages=[system_message,
 # write the response to a file
 write_response_to_file(file_path='results-complete.txt', 
                        response=story_response)
+
+ic(location, nickname, format, length, instructions, mentions, shots, start)
+ic(story_response.choices[0].message.content)
