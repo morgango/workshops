@@ -1,2 +1,3 @@
 # Example
-#   The moon
+
+The moon

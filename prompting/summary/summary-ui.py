@@ -32,11 +32,11 @@ def main():
     }
 
     # Read in default values from the system-prompt.txt and user-prompt.txt files
-    user_prompt = get_file_contents('system-prompt.txt')
-    system_message_content = st.text_area("Enter System Prompt:",value=user_prompt, height=100, max_chars=None, key=None)
+    system_prompt = get_file_contents('system-prompt.txt')
+    system_message_content = st.text_area("Enter System Prompt:",value=system_prompt, height=100, max_chars=None, key=None)
 
-    system_prompt = get_file_contents('user-prompt.txt')
-    user_message_content = st.text_area("User Prompt:", value=system_prompt, height=200, max_chars=None, key=None)
+    user_prompt = get_file_contents('user-prompt.txt')
+    user_message_content = st.text_area("User Prompt:", value=user_prompt, height=200, max_chars=None, key=None)
 
     
     # build our messages to send to openAI.  These should be well formed JSON with a ROLE and CONTENT

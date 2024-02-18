@@ -1,2 +1,3 @@
 # Example
-#   Lilly, the frog.
+
+Lilly, the frog.
