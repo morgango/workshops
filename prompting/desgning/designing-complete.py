@@ -49,6 +49,12 @@ story_response = simple_chat(messages=[system_message,
 write_response_to_file(file_path='results-complete.txt', 
                        response=story_response)
 
+import re
+response = get_file_contents('results-complete.txt', return_as_list=True)
+
+for paragraph in response:
+    print(f"paragraph: {paragraph}")
+
 # log output the results
 ic(location, nickname, format, length, instructions, mentions, shots, start)
 ic(story_response.choices[0].message.content)

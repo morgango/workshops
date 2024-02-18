@@ -2,3 +2,6 @@
 #   Conditional logic: If the detective were to encounter a false lead, describe how they would navigate through it to ultimately solve the murder case."
 #   Adjusting language: Include a shakespearian sonnet at some point in the text.
 
+Include talk about Chelsea FC, Arsenal, and other EPL teams.
+Talk aout the Thames River
+Discuss the cost of real estate.

@@ -11,18 +11,21 @@ def main():
 
     st.title("Storytelling Application")
 
+    with st.expander("Advanced Options"):
     # break the buttons into three columns so they can be side by side
-    col1, col2, col3 = st.columns(3)
-    
-    with col1:
-        temperature = st.number_input("Temperature:", value=0.0, step=0.1, max_value=1.0, min_value=0.0)
-    
-    with col2:
-        model_options = ['gpt-3.5-turbo', 'gpt-4.0', 'gpt-4.5']
-        model = st.selectbox("Model:", model_options)
-    
-    with col3:
-        max_tokens = st.number_input("Max Tokens:", value=2000, step=100, max_value=2000, min_value=100)
+
+        # break the buttons into three columns so they can be side by side
+        col1, col2, col3 = st.columns(3)
+        
+        with col1:
+            temperature = st.number_input("Temperature:", value=0.0, step=0.1, max_value=1.0, min_value=0.0)
+        
+        with col2:
+            model_options = ['gpt-3.5-turbo', 'gpt-4.0', 'gpt-4.5']
+            model = st.selectbox("Model:", model_options)
+        
+        with col3:
+            max_tokens = st.number_input("Max Tokens:", value=2000, step=100, max_value=2000, min_value=100)
     
     # these are arguments that can be pre-defined and passed to the simple_chat function.
     simple_chat_args = {

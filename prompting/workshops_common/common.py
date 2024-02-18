@@ -91,7 +91,6 @@ def get_file_size(file_path: str) -> int:
         file_bytes = file.read()
     return len(file_bytes)
 
-
 def get_file_lines(file_path: str) -> int:
     with open(file_path, 'rb') as file:
         lines = file.readlines()

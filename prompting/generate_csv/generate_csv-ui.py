@@ -1,6 +1,6 @@
 from workshops_common import set_local_directory, simple_chat, get_file_contents, write_response_to_file
 import streamlit as st
-
+import pandas as pd
 
 set_local_directory()
 
@@ -9,7 +9,7 @@ model_options = ['gpt-3.5-turbo', 'gpt-4.0', 'gpt-4.5']
 
 def main():
 
-    st.title("Summarization Application")
+    st.title("CSV Generation Application")
 
     with st.expander("Advanced Options"):
         # break the buttons into three columns so they can be side by side
@@ -48,7 +48,7 @@ def main():
     user_message = {"role":"user",
                     "content": user_message_content}
    
-    if st.button("Summarize"):
+    if st.button("Generate CSV"):
 
         # send the information to the LLM and get back a response
         chat_response = simple_chat(messages=[system_message, 
@@ -58,12 +58,15 @@ def main():
         # extract the response from the chat response
         response = chat_response.choices[0].message.content
 
-        # display the response on the screen
-        st.text_area("Summary:", value=response, height=200, max_chars=None, key=None)
-        
         # write the results to a file
         write_response_to_file(file_path='results.txt', 
                            response=chat_response)
+        
+        # Read the CSV data into a DataFrame
+        csv_data = pd.read_csv('results.txt', delimiter=',')
+        # Display the DataFrame as a table
+        st.dataframe(csv_data)
+
 
 if __name__ == "__main__":
     main()
