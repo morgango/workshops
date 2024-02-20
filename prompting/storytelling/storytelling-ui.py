@@ -1,15 +1,21 @@
 
-from workshops_common import set_local_directory, simple_chat, get_file_contents, write_response_to_file
+from workshop_common import set_local_directory, simple_chat, get_file_contents, write_response_to_file, tell_story, model_options
 import streamlit as st
 
+from dotenv import dotenv_values
+env_values = dotenv_values(".env")
 
-set_local_directory()
+system_prompt_fn = env_values['SYSTEM_PROMPT_FN'] or 'system-prompt.txt'
+user_prompt_fn = env_values['USER_PROMPT_FN'] or 'user-prompt.txt'
+results_fn = env_values['RESULTS_FN'] or 'results.txt'
+hero_fn = env_values['HERO_FN'] or 'hero.txt'
+subject_fn = env_values['SUBJECT_FN'] or 'subject.txt'
+location_fn = env_values['LOCATION_FN'] or 'location.txt'
 
-model_options = ['gpt-3.5-turbo', 'gpt-4.0', 'gpt-4.5']
 
 def main():
 
-    st.title("Storytelling Application")
+    st.title("Storytelling")
 
     with st.expander("Advanced Options"):
     # break the buttons into three columns so they can be side by side
@@ -18,10 +24,9 @@ def main():
         col1, col2, col3 = st.columns(3)
         
         with col1:
-            temperature = st.number_input("Temperature:", value=0.0, step=0.1, max_value=1.0, min_value=0.0)
+            temperature = st.number_input("Temperature:", value=0.5, step=0.1, max_value=1.0, min_value=0.0)
         
         with col2:
-            model_options = ['gpt-3.5-turbo', 'gpt-4.0', 'gpt-4.5']
             model = st.selectbox("Model:", model_options)
         
         with col3:
@@ -38,15 +43,15 @@ def main():
     col1, col2, col3 = st.columns(3)
     
     with col1:
-        hero_text = get_file_contents('hero.txt')
+        hero_text = get_file_contents(hero_fn)
         hero = st.text_area("Hero:", value=hero_text, height=50, max_chars=None, key=None)
     
     with col2:
-        subject_text = get_file_contents('subject.txt')
+        subject_text = get_file_contents(subject_fn)
         subject = st.text_area("Subject:", value=subject_text, height=50, max_chars=None, key=None)
     
     with col3:
-        location_text = get_file_contents('location.txt')
+        location_text = get_file_contents(location_fn)
         location = st.text_area("Location:", value=location_text, height=50, max_chars=None, key=None)
     
     # these are arguments that can be pre-defined and passed to the simple_chat function.
@@ -67,42 +72,23 @@ def main():
    
     if st.button("Create a Story"):
 
-        user_message_content = user_message_string.format(subject=subject, 
-                                                        hero=hero, 
-                                                        location=location)
+            # Get the story response
+        story_response = tell_story(user_prompt=user_prompt,
+                                system_prompt=system_prompt,
+                                subject=subject,
+                                hero=hero,
+                                location=location,
+                                chat_args=simple_chat_args)
         
-        # build our messages to send to openAI.  These should be well formed JSON with a ROLE and CONTENT
-        system_message = {"role":"system", 
-                        "content": system_message_content}
-        user_message = {"role":"user",
-                        "content": user_message_content}
-
-        # send the information to the LLM and get back a response
-        chat_response = simple_chat(messages=[system_message, 
-                                         user_message], 
-                               **simple_chat_args)
-
         # extract the response from the chat response
-        response = chat_response.choices[0].message.content
-
-        st.markdown(
-            f"""
-            <div style="white-space: pre-wrap; word-wrap: break-word;">
-                <b>User Prompt:</b> 
-                {user_message_content}
-            </div>
-            """,
-            unsafe_allow_html=True
-        )
-
-        # st.text(f"<b>True Prompt: {user_message_content}")
+        response = story_response.choices[0].message.content
 
         # display the response on the screen
         st.text_area("Here you go:", value=response, height=200, max_chars=None, key=None)
         
         # write the results to a file
         write_response_to_file(file_path='results.txt', 
-                           response=chat_response)
+                           response=story_response)
 
 if __name__ == "__main__":
     main()

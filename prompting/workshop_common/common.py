@@ -49,7 +49,7 @@ def get_file_contents(file_path: str, return_as_list: bool = False):
         lines = file.readlines()
 
         # Filter out lines starting with # and blank lines
-        lines = [line.strip() for line in lines if not line.startswith('#') and line.strip()]
+        lines = [line.strip() + '\n' for line in lines if not line.startswith('#') and line.strip()]
 
         # Join all lines into a single string or return as a list
         if return_as_list:

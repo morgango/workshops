@@ -1,5 +1,5 @@
 from nemoguardrails import LLMRails, RailsConfig
-from workshops_common import set_local_directory
+from workshop_common import set_local_directory
 from icecream import ic
 
 # make sure python is looking in the right spot for the files we need.

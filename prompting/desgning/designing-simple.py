@@ -1,41 +1,50 @@
-from workshops_common import set_local_directory, simple_chat, get_file_contents, write_response_to_file
+from workshop_common import set_local_directory, simple_chat, get_file_contents, write_response_to_file, get_file_size, execute_prompt
 from icecream import ic
+import argparse
 
-# make sure python is looking in the right spot for the files we need.
-set_local_directory()
+if __name__ == "__main__":
+    
+    design_type="simple"
 
-# these are arguments that can be pre-defined and passed to the simple_chat function.
-# they can be changed as needed. 
-simple_chat_args = {
-    'temperature': 0,
-    'model': 'gpt-3.5-turbo',
-    'max_tokens': 2000,
-}
+    # Parse command-line arguments
+    parser = argparse.ArgumentParser(description="Customize user message and run story response")
+    parser.add_argument('--temperature', type=float, default=0, help="Temperature for simple_chat function")
+    parser.add_argument('--model', type=str, default='gpt-3.5-turbo', help="Model for simple_chat function")
+    parser.add_argument('--max_tokens', type=int, default=2000, help="Max tokens for simple_chat function")
 
-# get the system and user messages from the files
-system_message_content = get_file_contents('system-prompt.txt')
+    # Add command-line arguments for file paths
+    parser.add_argument('--system_prompt_file', type=str, default='system-prompt.txt', help="File containing system message content")
+    parser.add_argument('--user_prompt_file', type=str, default=f'user-prompt-{design_type}.txt', help="File containing user message content")
+    parser.add_argument('--response_file', help="File to write the response to", default=f'results-{design_type}.txt')
+    parser.add_argument('--location_file', type=str, default='location.txt', help="File containing location content")
 
-# define some parameters for this story
-location = get_file_contents('location.txt')
+    args = parser.parse_args()
 
-# use the information from our files to customize the user message
-user_message_string = get_file_contents('user-prompt-simple.txt')
-user_message_content = user_message_string.format(location=location)
+    # Set local directory, initialize simple_chat_args
+    set_local_directory()
+    chat_args = {
+        'temperature': args.temperature,
+        'model': args.model,
+        'max_tokens': args.max_tokens
+    }
 
-# create the messages we are going to use to create the story.
-system_message = {"role":"system", "content": system_message_content}
-user_message = {"role":"user", "content": user_message_content}
+    # Get system and user messages from files specified in command-line arguments
+    location = get_file_contents(args.location_file)
 
-# send the information to OpenAI and get back a response
-story_response = simple_chat(messages=[system_message, 
-                                       user_message], 
-                             **simple_chat_args)
+    prompt_args={'location': location} 
 
-# write the response to a file
-write_response_to_file(file_path='results-simple.txt', 
-                       response=story_response)
+    # # use the information from our files to customize the user message
+    user_message = get_file_contents(args.user_prompt_file)
+    system_message = get_file_contents(args.system_prompt_file)
 
+    prompt_response = execute_prompt(user_prompt=user_message, 
+                                    system_prompt=system_message, 
+                                    prompt_vars=prompt_args, 
+                                    chat_args=chat_args)
 
-# log output the results
-ic(location)
-ic(story_response.choices[0].message.content)
+    # Write response to a file
+    write_response_to_file(file_path=args.response_file, response=prompt_response)
+
+    # Log the output and results
+    result_size = get_file_size(args.response_file)
+    ic(prompt_response, result_size)

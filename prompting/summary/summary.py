@@ -1,42 +1,53 @@
-from workshops_common import set_local_directory, simple_chat, get_file_contents, get_file_size, write_response_to_file
+from workshop_common import set_local_directory, get_file_contents, get_file_size, write_response_to_file, summarize_text
 from icecream import ic
 
-# make sure python is looking in the right spot for the files we need.
-set_local_directory()
 
+# Only run the function if the script is executed directly
+if __name__ == "__main__":
 
-# these are arguments that can be pre-defined and passed to the simple_chat function.
-# they can be changed as needed. 
-simple_chat_args = {
-    'temperature': 0,
-    'model': 'gpt-3.5-turbo',
-    'max_tokens': 2000,
-}
+    import argparse
 
-# Get a really long file to deal with
-user_message_content = get_file_contents('user-prompt.txt')
+    # Create an ArgumentParser object
+    parser = argparse.ArgumentParser(description="Simple chat program with command line arguments")
+    
+    # Add command line arguments for filenames and simple_chat_args with default values
+    parser.add_argument('--user_prompt_file', help="File containing user message content", default='user-prompt.txt')
+    parser.add_argument('--system_prompt_file', help="File containing system message content", default='system-prompt.txt')
+    parser.add_argument('--response_file', help="File to write the response to", default='results.txt')
+    
+    parser.add_argument('--temperature', type=float, default=0, help="Temperature for simple_chat function")
+    parser.add_argument('--model', type=str, default='gpt-3.5-turbo', help="Model for simple_chat function")
+    parser.add_argument('--max_tokens', type=int, default=2000, help="Max tokens for simple_chat function")
+    
+    # Parse the command line arguments
+    args = parser.parse_args()
+    
+    # make sure python is looking at this local directory
+    set_local_directory()
 
-# Tell how to deal with the file
-system_message_content = get_file_contents('system-prompt.txt')
- 
-# build our messages to send to openAI.  These should be well formed JSON with a ROLE and CONTENT
-system_message = {"role":"system", 
-                  "content": system_message_content}
-user_message = {"role":"user",
-                "content": user_message_content}
+    # Get a really long file to summarize
+    user_message_content = get_file_contents(args.user_prompt_file)
+    
+    # Tell the AI how to deal with the file
+    system_message_content = get_file_contents(args.system_prompt_file)
 
-# send the information to OpenAI and get back a response
-summary_response = simple_chat(messages=[system_message, 
-                                         user_message], 
-                               **simple_chat_args)
+    # Build simple_chat_args dictionary based on the command-line arguments
+    chat_args = {
+        'temperature': args.temperature,
+        'model': args.model,
+        'max_tokens': args.max_tokens
+    }
 
+    # summarize the information from the files
+    response = summarize_text(user_prompt=user_message_content,
+                              system_prompt=system_message_content,
+                              chat_args=chat_args)
+    
+    # save the results as text
+    write_response_to_file(file_path=args.response_file, response=response)
 
-# write the response to a file
-write_response_to_file(file_path='results.txt', 
-                       response=summary_response)
+    # get the sizes of the results
+    prompt_size = get_file_size(args.user_prompt_file)
+    result_size = get_file_size(args.response_file)
 
-# get the size of the prompt and the result
-prompt_size = get_file_size('user-prompt.txt')
-result_size = get_file_size('results.txt')
-
-ic(prompt_size, result_size)
+    ic(response, prompt_size, result_size)

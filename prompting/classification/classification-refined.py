@@ -1,4 +1,4 @@
-from workshops_common import set_local_directory, simple_chat, get_file_contents, write_response_to_file, append_line_to_file
+from workshop_common import set_local_directory, simple_chat, get_file_contents, write_response_to_file, append_line_to_file
 from icecream import ic
 # make sure python is looking in the right spot for the files we need.
 set_local_directory()
