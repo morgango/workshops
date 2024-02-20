@@ -1,4 +1,4 @@
-from workshop_common import set_local_directory, simple_chat, get_file_contents, write_response_to_file, execute_prompt, model_options
+from workshop_common import set_local_directory, get_file_contents, write_response_to_file, execute_prompt, model_options, build_prompt_args
 import streamlit as st
 from icecream import ic
 import pandas as pd
@@ -10,10 +10,10 @@ set_local_directory()
 from dotenv import dotenv_values
 env_values = dotenv_values(".env")
 
-system_prompt_fn = env_values['SYSTEM_PROMPT_FN'] or 'system-prompt.txt'
-user_prompt_fn = env_values['USER_PROMPT_FN'] or f'user-prompt-{design_type}.txt'
-results_fn = env_values['RESULTS_FN'] or f'results-{design_type}.txt'
-location_fn = env_values['LOCATION_FN'] or 'location.txt'
+system_prompt_fn = env_values['SYSTEM_PROMPT_FN']
+user_prompt_fn = env_values['SIMPLE_USER_PROMPT_FN']
+results_fn = env_values['RESULTS_FN']
+location_fn = env_values['LOCATION_FN']
 
 def main():
 
@@ -41,25 +41,30 @@ def main():
     with st.expander("Prompt Options"):
         # break the buttons into three columns so they can be side by side
 
-        location_text = get_file_contents('location.txt')
-        location = st.text_area("Location:", value=location_text, height=50, max_chars=None, key=None)
+        location_text = get_file_contents(location_fn)
+        st.session_state['location'] = st.text_area("Location:", value=location_text, height=50, max_chars=None, key=None)
 
     # Read in default values from the system-prompt.txt and user-prompt.txt files
-    system_prompt = get_file_contents('system-prompt.txt')
-    system_message_content = st.text_area("Enter System Prompt:",value=system_prompt, height=100, max_chars=None, key=None)
+    system_prompt_raw = get_file_contents(system_prompt_fn)
+    system_prompt = st.text_area("Enter System Prompt:",value=system_prompt_raw, height=100, max_chars=None, key=None)
 
-    user_prompt = get_file_contents('user-prompt-simple.txt')
-    user_message_string = st.text_area("User Prompt:", value=user_prompt, height=200, max_chars=None, key=None)
+    user_prompt_raw = get_file_contents(user_prompt_fn)
+    user_prompt = st.text_area("User Prompt:", value=user_prompt_raw, height=200, max_chars=None, key=None)
 
     if st.button("Generate Response"):
 
-        prompt_args={'location': location} 
-
-        prompt_response = execute_prompt(user_prompt=user_message_string, 
-                                        system_prompt=system_message_content, 
-                                        prompt_vars=prompt_args, 
-                                        chat_args=chat_args)
+        # define the variables that we want to pass to the prompt
+        variable_names = ["location"]
         
+        # turn into a dictionary ready for substitution
+        prompt_args = build_prompt_args(variable_names)
+
+        # get back the response from the AI
+        prompt_response = execute_prompt(user_prompt=user_prompt, 
+                                system_prompt=system_prompt, 
+                                prompt_vars=prompt_args,
+                                chat_args=chat_args)
+                
         # extract the response from the chat response
         response = prompt_response.choices[0].message.content
 

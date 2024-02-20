@@ -1,4 +1,13 @@
 from workshop_common import simple_chat
+import streamlit as st
+
+def build_prompt_args(variable_names):
+    result = {}
+    for var_name in variable_names:
+        value = st.session_state.get(var_name)
+        result[var_name] = value
+
+    return result
 
 def execute_prompt(user_prompt="", 
                 system_prompt="",
@@ -16,3 +25,5 @@ def execute_prompt(user_prompt="",
     story_response = simple_chat(messages=[system_message, user_message], **chat_args)
 
     return story_response
+
+
