@@ -37,7 +37,6 @@ def main():
         # break the inputs into three columns so they can be side by side.
         # only make them usable when in the right state.
         col1, col2 = st.columns(2)
-
                     
         with col1:
             items_list = get_file_contents(file_path=items_fn, return_as_list=True, strip_newline=True)
