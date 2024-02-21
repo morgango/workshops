@@ -1,4 +1,4 @@
-from workshop_common import set_local_directory, get_file_contents, write_response_to_file, execute_prompt, model_options, build_prompt_args
+from workshop_common import set_local_directory, get_file_contents, write_response_to_file, execute_prompt, model_options, build_prompt_args_from_session
 import streamlit as st
 import pandas as pd
 from icecream import ic
@@ -24,27 +24,20 @@ def main():
 
     is_simple = True
 
-    st.title("Designing a Simple Prompt")
+    st.title("Designing Prompts")
 
     with st.expander("Advanced Options"):
         # break the buttons into three columns so they can be side by side
         col1, col2, col3 = st.columns(3)
         
         with col1:
-            temperature = st.number_input("Temperature:", value=0.0, step=0.1, max_value=1.0, min_value=0.0)
+            st.session_state['temperature'] = st.number_input("Temperature:", value=0.5, step=0.1, max_value=1.0, min_value=0.0)
         
         with col2:
-            model = st.selectbox("Model:", model_options)
+            st.session_state['model'] = st.selectbox("Model:", model_options)
         
         with col3:
-            max_tokens = st.number_input("Max Tokens:", value=2000, step=100, max_value=2000, min_value=100)
-    
-    # these are arguments that can be pre-defined and passed to the simple_chat function.
-    chat_args = {
-        'temperature': temperature,
-        'model': model,
-        'max_tokens': max_tokens,
-    }
+            st.session_state['max_tokens'] = st.number_input("Max Tokens:", value=2000, step=100, max_value=2000, min_value=100)
 
     # there are three input states.
     st.session_state['design'] = st.selectbox("Design State:", ["Simple", "Refined", "Complete"])
@@ -143,6 +136,9 @@ def main():
 
     if st.button("Generate Response"):
 
+        chat_variable_names = ["temperature", "model", "max_tokens"]
+        chat_args = build_prompt_args_from_session(chat_variable_names)
+
         # get the variable names for the prompt
         variable_names = []
 
@@ -164,12 +160,12 @@ def main():
                                 "nickname"]
         
         # turn into a dictionary ready for substitution
-        prompt_args = build_prompt_args(variable_names)
+        prompt_args = build_prompt_args_from_session(variable_names)
 
         # get back the response from the AI
         prompt_response = execute_prompt(user_prompt=user_prompt, 
                                 system_prompt=system_prompt, 
-                                prompt_vars=prompt_args,
+                                user_prompt_vars=prompt_args,
                                 chat_args=chat_args)
         
         # extract the response from the chat response
@@ -183,8 +179,6 @@ def main():
 
         for paragraph in paragraphs:
             st.write(paragraph)
-
-        ic(response)
 
         
 

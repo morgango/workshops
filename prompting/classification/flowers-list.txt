@@ -1,5 +1,0 @@
-# You can add items to this list just by adding text on another line.
-Sunflower
-Carnation
-Bluebonnet
-Rose

@@ -45,7 +45,7 @@ if __name__ == "__main__":
 
     prompt_response = execute_prompt(user_prompt=user_message, 
                                     system_prompt=system_message, 
-                                    prompt_vars=prompt_args, 
+                                    user_prompt_vars=prompt_args, 
                                     chat_args=chat_args)
 
     # Write response to a file

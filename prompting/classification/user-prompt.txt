@@ -1,1 +1,1 @@
-Classify this: {item}
+Classify these: {items}

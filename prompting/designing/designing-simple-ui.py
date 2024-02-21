@@ -1,4 +1,4 @@
-from workshop_common import set_local_directory, get_file_contents, write_response_to_file, execute_prompt, model_options, build_prompt_args
+from workshop_common import set_local_directory, get_file_contents, write_response_to_file, execute_prompt, model_options, build_prompt_args_from_session
 import streamlit as st
 from icecream import ic
 import pandas as pd
@@ -57,12 +57,12 @@ def main():
         variable_names = ["location"]
         
         # turn into a dictionary ready for substitution
-        prompt_args = build_prompt_args(variable_names)
+        prompt_args = build_prompt_args_from_session(variable_names)
 
         # get back the response from the AI
         prompt_response = execute_prompt(user_prompt=user_prompt, 
                                 system_prompt=system_prompt, 
-                                prompt_vars=prompt_args,
+                                user_prompt_vars=prompt_args,
                                 chat_args=chat_args)
                 
         # extract the response from the chat response

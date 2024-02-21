@@ -42,14 +42,17 @@ def simple_chat(messages: List[Dict[str, Any]], model: str = 'gpt-3.5-turbo', te
     return response
 
 
-def get_file_contents(file_path: str, return_as_list: bool = False):
+def get_file_contents(file_path: str, return_as_list: bool = False, strip_newline: bool = False):
     # Open the file in read mode
     with open(file_path, 'r') as file:
         # Read all lines from the file
         lines = file.readlines()
 
         # Filter out lines starting with # and blank lines
-        lines = [line.strip() + '\n' for line in lines if not line.startswith('#') and line.strip()]
+        if strip_newline:
+            lines = [line.rstrip('\n') for line in lines if line.strip() and not line.startswith('#') and line.rstrip('\n')]
+        else:
+            lines = [line.strip() + '\n' for line in lines if not line.startswith('#') and line.strip()]
 
         # Join all lines into a single string or return as a list
         if return_as_list:

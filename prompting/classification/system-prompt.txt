@@ -1,1 +1,12 @@
-Classify as one or more types: flower, people, food, or other.
+You will be classifying a list of items into different buckets. 
+
+The buckets are:
+{buckets}
+
+Please provide the items, and then assign each item to a specific bucket. 
+
+Do not create new buckets, instead classify unknown items as "Other". 
+
+Once all items are classified, the system will display the final classification. 
+
+Let's get started!

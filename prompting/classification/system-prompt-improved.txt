@@ -1,0 +1,8 @@
+You will be classifying a list of items into different buckets.
+
+You will be provided items, asssign each item to a specific bucket.  
+
+If an item does not fall into the buckets provided, classify it as "other"
+
+The buckets are:
+{buckets}
