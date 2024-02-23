@@ -1,0 +1,13 @@
+RESULTS_FN=results.txt
+SYSTEM_PROMPT_FN=system-prompt.txt
+SIMPLE_USER_PROMPT_FN=user-prompt-simple.txt
+REFINED_USER_PROMPT_FN=user-prompt-refined.txt
+COMPLETE_USER_PROMPT_FN=user-prompt-complete.txt
+LOCATION_FN=location.txt
+FORMAT_FN=format.txt
+LENGTH_FN=length.txt
+MENTIONS_FN=mentions.txt
+INSTRUCTIONS_FN=instructions.txt
+SHOTS_FN=shots.txt
+START_FN=start.txt
+NICKNAME_FN=nickname.txt

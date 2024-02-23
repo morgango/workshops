@@ -1,0 +1,6 @@
+RESULTS_FN=results.txt
+SYSTEM_PROMPT_FN=system-prompt.txt
+USER_PROMPT_FN=user-prompt.txt
+HERO_FN=hero.txt
+LOCATION_FN=location.txt
+SUBJECT_FN=subject.txt
