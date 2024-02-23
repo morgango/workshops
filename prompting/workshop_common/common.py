@@ -35,9 +35,9 @@ def simple_chat(messages: List[Dict[str, Any]], model: str = 'gpt-3.5-turbo', te
 
     # Send the messages to OpenAI and get the response
     response = client.chat.completions.create(model=model,
-    messages=messages,
-    temperature=temperature,
-    max_tokens=max_tokens)
+        messages=messages,
+        temperature=temperature,
+        max_tokens=max_tokens)
 
     return response
 
