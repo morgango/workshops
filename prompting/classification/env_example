@@ -1,0 +1,5 @@
+ITEMS_FN=items.txt
+BUCKETS_FN=buckets.txt
+SYSTEM_PROMPT_FN=system-prompt.txt
+USER_PROMPT_FN=user-prompt.txt
+RESULTS_FN=results.txt
