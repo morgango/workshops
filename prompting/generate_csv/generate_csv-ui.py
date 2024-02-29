@@ -38,24 +38,24 @@ def main():
     }
 
     # Read in default values from the system-prompt.txt and user-prompt.txt files
-    system_prompt = get_file_contents(system_prompt_fn)
-    system_message_content = st.text_area("Enter System Prompt:",value=system_prompt, height=100, max_chars=None, key=None)
+    system_prompt_raw = get_file_contents(system_prompt_fn)
+    system_prompt = st.text_area("Enter System Prompt:",value=system_prompt_raw, height=100, max_chars=None, key=None)
 
-    user_prompt = get_file_contents(user_prompt_fn)
-    user_message_content = st.text_area("User Prompt:", value=user_prompt, height=200, max_chars=None, key=None)
+    user_prompt_raw = get_file_contents(user_prompt_fn)
+    user_message = st.text_area("User Prompt:", value=user_prompt_raw, height=200, max_chars=None, key=None)
 
     
     # build our messages to send to openAI.  These should be well formed JSON with a ROLE and CONTENT
     system_message = {"role":"system", 
-                    "content": system_message_content}
+                    "content": system_message}
     user_message = {"role":"user",
-                    "content": user_message_content}
+                    "content": user_message}
    
     if st.button("Generate CSV"):
 
         # send the information to OpenAI and get back a response
-        csv_response = generate_csv(system_prompt=system_message_content, 
-                                    user_prompt=user_message_content, 
+        csv_response = generate_csv(system_prompt=system_message, 
+                                    user_prompt=user_message, 
                                     chat_args=chat_args)
 
         # extract the response from the chat response

@@ -1,11 +1,20 @@
-id, name, email, salary
-1, John Smith, john.smith@example.com, 60000
-2, Sarah Johnson, sarah.johnson@example.com, 55000
-3, Michael Brown, michael.brown@example.com, 62000
-4, Emily Davis, emily.davis@example.com, 58000
-5, Kevin Wilson, kevin.wilson@example.com, 59000
-6, Jessica Lee, jessica.lee@example.com, 63000
-7, Brian Miller, brian.miller@example.com, 57000
-8, Amanda Martinez, amanda.martinez@example.com, 61000
-9, David Anderson, david.anderson@example.com, 64000
-10, Laura Garcia, laura.garcia@example.com, 60000
+1001, jdoe, Microsoft.com, 123 Main St, Office A, $60,000
+1002, asmith, Microsoft.com, 456 Elm St, Office A, $65,000
+1003, krodriguez, Microsoft.com, 789 Oak St, Office A, $70,000
+1004, cwilliams, Microsoft.com, 321 Pine St, Office A, $75,000
+1005, ljohnson, Microsoft.com, 654 Birch St, Office A, $80,000
+1006, rmartinez, Microsoft.com, 987 Maple St, Office A, $85,000
+1007, bthomas, Microsoft.com, 135 Cherry St, Office A, $90,000
+1008, jlee, Microsoft.com, 246 Walnut St, Office A, $95,000
+1009, mlopez, Microsoft.com, 579 Cedar St, Office A, $100,000
+1010, jgonzalez, Microsoft.com, 864 Ash St, Office B, $105,000
+1011, dperez, Microsoft.com, 975 Sycamore St, Office B, $110,000
+1012, rjames, Microsoft.com, 753 Oakwood St, Office B, $115,000
+1013, cnguyen, Microsoft.com, 369 Hickory St, Office B, $120,000
+1014, jsmith, Microsoft.com, 852 Pinecrest St, Office B, $125,000
+1015, dwhite, Microsoft.com, 147 Cedarwood St, Office B, $130,000
+1016, amiller, Microsoft.com, 258 Birchwood St, Office B, $135,000
+1017, bhall, Microsoft.com, 963 Willow St, Office B, $140,000
+1018, pscott, Microsoft.com, 741 Magnolia St, Office B, $145,000
+1019, sroberts, Microsoft.com, 582 Maplewood St, Office B, $150,000
+1020, gcollins, Microsoft.com, 369 Elmwood St, Office B, $155,000

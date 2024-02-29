@@ -63,11 +63,11 @@ def main():
 
 
     # Read in default values from the system-prompt.txt and user-prompt.txt files
-    system_prompt = get_file_contents('system-prompt.txt')
-    system_message_content = st.text_area("System Prompt:",value=system_prompt, height=100, max_chars=None, key=None)
+    system_prompt_raw = get_file_contents('system-prompt.txt')
+    system_prompt = st.text_area("System Prompt:",value=system_prompt_raw, height=100, max_chars=None, key=None)
 
-    user_prompt = get_file_contents('user-prompt.txt')
-    user_message_string = st.text_area("User Prompt:", value=user_prompt, height=200, max_chars=None, key=None,)
+    user_prompt_raw = get_file_contents('user-prompt.txt')
+    user_prompt = st.text_area("User Prompt:", value=user_prompt_raw, height=200, max_chars=None, key=None,)
     
    
     if st.button("Create a Story"):
