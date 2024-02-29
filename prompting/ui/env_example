@@ -1,4 +1,3 @@
-OPENAI_API_KEY=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
 SUMMARY_RESULTS_FN=../summary/results.txt
 SUMMARY_SYSTEM_PROMPT_FN=../summary/system-prompt.txt
 SUMMARY_USER_PROMPT_FN=../summary/user-prompt.txt

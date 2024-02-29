@@ -6,6 +6,3 @@ Cookies
 Alice
 Bob
 Carla
-Alice
-Bob
-Carla
