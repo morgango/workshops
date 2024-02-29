@@ -2,6 +2,6 @@
 - Turkey: Food
 - Samosas: Food
 - Cookies: Food
-- Alice: Other
-- Bob: Other
-- Carla: Other
+- Alice: People
+- Bob: People
+- Carla: People

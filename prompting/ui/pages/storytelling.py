@@ -17,6 +17,19 @@ def main():
     st.title("Storytelling")
 
     with st.expander("Advanced Options"):
+        # break the buttons into three columns so they can be side by side
+        col1, col2, col3 = st.columns(3)
+        
+        with col1:
+            st.session_state['temperature'] = st.number_input("Temperature:", value=0.5, step=0.1, max_value=1.0, min_value=0.0)
+        
+        with col2:
+            st.session_state['model'] = st.selectbox("Model:", model_options)
+        
+        with col3:
+            st.session_state['max_tokens'] = st.number_input("Max Tokens:", value=2000, step=100, max_value=2000, min_value=100)
+
+    with st.expander("Prompt Options"):
 
         # break the buttons into three columns so they can be side by side
         col1, col2, col3 = st.columns(3)
