@@ -39,9 +39,9 @@ def execute_prompt(user_prompt="",
     user_message = {"role": "user", "content": user_message_formatted}
 
     # Get response from OpenAI
-    story_response = simple_chat(messages=[system_message, user_message], **chat_args)
+    response = simple_chat(messages=[system_message, user_message], **chat_args)
 
-    ic("response:", story_response)
-    return story_response
+    ic("response:", response)
+    return response
 
 
