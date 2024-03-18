@@ -29,7 +29,7 @@ def execute_prompt(user_prompt="",
     ic("system:", system_prompt, system_prompt_vars)
     ic("user:", user_prompt, user_prompt_vars)
 
-    # Customize user message with subject, hero, and location
+    # Customize user message and system message text with variables that were passed to us
     user_message_formatted = user_prompt.format(**user_prompt_vars)
     system_message_formatted = system_prompt.format(**system_prompt_vars)
 
