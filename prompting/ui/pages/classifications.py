@@ -59,7 +59,7 @@ def main():
 
     # Read in default values from the system and user prompts
     system_prompt_raw = get_file_contents(system_prompt_fn)
-    system_prompt = st.text_area("Enter System Prompt:",value=system_prompt_raw, height=250, max_chars=None, key=None)
+    system_prompt = st.text_area("System Prompt:",value=system_prompt_raw, height=250, max_chars=None, key=None)
 
     user_prompt_raw = get_file_contents(user_prompt_fn)
     user_prompt = st.text_area("User Prompt:", value=user_prompt_raw, height=200, max_chars=None, key=None)
