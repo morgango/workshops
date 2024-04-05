@@ -1,0 +1,33 @@
+# Meet the Acme Team
+
+Welcome to the Acme Corporation's employee information page! Here, you'll get to know the fantastic team that makes Acme the amazing company it is. From our dedicated CEO to our hardworking employees, we're a family here at Acme.
+
+## Fredward Benson - CEO
+
+Leading the charge at Acme is our fearless CEO, Fredward Benson. Hailing from the rainy city of Seattle, Washington, Fredward brings a wealth of experience in digital media to the table. With his visionary leadership, Acme continues to thrive and innovate in the industry.
+
+## Jane Smith - HR Manager
+
+Keeping the Acme team happy and motivated is our HR Manager, Jane Smith. Jane is the go-to person for all your HR needs, from onboarding to benefits and everything in between. With her friendly demeanor and wealth of knowledge, Jane ensures that every employee at Acme feels valued and supported.
+
+## Money, Money, Money, Inc. - 401K Provider
+
+Planning for your future? Look no further than Money, Money, Money, Inc., Acme's trusted 401K provider. With a generous 100% match on the first 5% of your contributions, Money, Money, Money, Inc. helps you secure a financially sound retirement.
+
+## Purple Shield of Yorba Linda, LLC - Health Care Provider
+
+Your health is important to us at Acme, which is why we partner with Purple Shield of Yorba Linda, LLC for top-notch health care coverage. From routine check-ups to specialized treatments, Purple Shield has you covered, ensuring you stay healthy and happy.
+
+## Headspace - Meditation Provider
+
+In today's fast-paced world, it's essential to take a moment to unwind and destress. That's where Headspace comes in. As Acme's meditation provider, Headspace offers guided meditation sessions to help you relax, focus, and recharge, promoting overall well-being.
+
+## Parenthood, Inc. - Fertility Benefits Provider
+
+At Acme, we understand the importance of family planning, which is why we offer fertility benefits through Parenthood, Inc. Whether you're considering starting a family or exploring fertility options, Parenthood, Inc. provides support and resources to help you on your journey.
+
+## Acme Corporation - A Team Like No Other
+
+At Acme, we're more than just colleagues – we're a close-knit team that supports and uplifts each other. With a generous vacation policy of 25 days per year, 5 floating holidays, and 7 sick days, we prioritize work-life balance and employee well-being. Join us at Acme, where you'll not only excel in your career but also be part of a caring and inclusive community.
+
+Join the Acme team today and be a part of something extraordinary!

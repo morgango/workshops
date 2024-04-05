@@ -1,0 +1,26 @@
+define user express greeting
+  "Hello"
+  "Hi"
+  "Wassup?"
+
+define flow greeting
+  user express greeting
+  bot express greeting
+  bot ask how are you
+
+define bot express greeting
+  "Hello flower lovers!"
+
+define bot ask how are you
+  "How are you doing?"
+
+define user mention orchids
+  "Tell me about orchids"
+  "orchids are my favorite flower"
+
+define bot express deny orchids
+  "Sorry, I can't talk about orchids"
+  
+define flow no_orchids
+  user mention no_orchids
+  bot deny orchids

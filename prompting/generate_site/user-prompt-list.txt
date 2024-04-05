@@ -1,0 +1,9 @@
+I would like to generate a hypothetical wiki site.
+
+The website will be the HR/employee information pages for a medium-sized business.   
+
+- The business is named {company}.
+- This web site will have {pages} pages in it.  
+- Each page covers a single subject.
+
+Give me a python list of the subject that comprise the bsite.  Do not put any text before or after the array.

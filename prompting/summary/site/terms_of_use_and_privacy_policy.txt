@@ -1,0 +1,28 @@
+# Acme Corporation HR Wiki
+
+Welcome to the Acme Corporation HR Wiki, your one-stop destination for all things related to employee benefits and company policies. Here at Acme Corporation, we believe in taking care of our employees like family, because after all, we're all in this together!
+
+## Terms of Use and Privacy Policy
+
+### 1. Introduction
+At Acme Corporation, we take your privacy and security seriously. Our Terms of Use and Privacy Policy outline how we collect, use, and protect your personal information. By accessing our HR Wiki, you agree to abide by these terms.
+
+### 2. Data Collection
+We collect personal information such as your name, contact details, and employment history to provide you with HR services. Rest assured, your data is securely stored and only accessed by authorized personnel for legitimate business purposes.
+
+### 3. Information Sharing
+Your privacy is important to us, and we do not sell or share your personal information with third parties for marketing purposes. We may disclose information to our trusted partners, such as Purple Shield of Yorba Linda, LLC, for the administration of health care benefits.
+
+### 4. Cookie Policy
+Like many websites, we use cookies to enhance your browsing experience on our HR Wiki. These cookies help us analyze site traffic and improve our services. By continuing to use our site, you consent to the use of cookies.
+
+### 5. Security Measures
+We employ industry-standard security measures to protect your data from unauthorized access or disclosure. Our HR Wiki is encrypted to ensure that your information remains confidential and secure.
+
+### 6. Opt-Out Options
+If you wish to opt out of certain data collection practices or update your preferences, please contact our HR department at hr@acmecorp.com. We respect your choices and will accommodate your requests to the best of our ability.
+
+### 7. Contact Us
+For any questions or concerns regarding our Terms of Use and Privacy Policy, please reach out to our HR team at (555) 123-4567 or visit our website at [www.acmecorp.com/hr-wiki](www.acmecorp.com/hr-wiki). Your privacy matters to us, and we are here to assist you every step of the way.
+
+Thank you for entrusting Acme Corporation with your career journey. We value your contributions and are committed to providing a supportive and inclusive work environment for all our employees.

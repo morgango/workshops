@@ -1,0 +1,32 @@
+I would like to generate a hypothetical wiki page.
+
+The website will be the HR/employee information pages for a medium-sized business.   
+
+- The business is named {company}.
+- This web site will have {pages} pages in it.  
+- Each page covers a single subject.
+- Our 401K provider is money, money, money, Inc.
+- Our Health care provider is Purple Shield of Yorba Linda, LLC.
+- Our meditation provider is Headspace.
+- We give a 100% match on the first 5% of 401K
+- We have an optional disability insurace.
+- We provide life insurance for all our employees.
+- We give $1000 spot bonuses for regognition.
+- We provide fertility benefits through Parenthood, Inc.
+- We have 25 days of vacation per year.
+- We have 5 days of floating holiday per year.
+- We have 7 days of sick time per year.
+- We reimburse for gym memberships.
+- Our CEO is Fredward Benson of Seattle, Wa.  He spent much of his early career in digital media before coming to {company}
+
+Be as specfic as possible and give definitive information.  
+
+- Give examples with specific people, companies, services and products. 
+- Create fictious companies who will provide provide financial, HR, medical insurance, and medical services.
+- Give email, website and phone contact information for any companies providing financial, HR, medical insurance, and medical services.
+- Give specific numbers of days for vacation policies and sick leave.
+- Give specific amounts for raises, retirement, education, and 401K matches.
+
+Write a page of at least 7 paragraphs on the subject of {subject}.  Each paragraph should be at least 3 sentences.
+
+Format the output as markdown, 
