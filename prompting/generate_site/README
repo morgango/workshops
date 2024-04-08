@@ -1,0 +1,61 @@
+ **README**
+
+**Project Name:** Generating Company Website Content with OpenAI
+
+**Description:**
+
+This Python code leverages OpenAI APIs to automatically generate content for a company website. It takes user prompts and system prompts as input, interacts with OpenAI's text generation model, and produces text for multiple pages of a website.
+
+It will create a list of different web pages based on the `system-prompt-list.txt` and `user-prompt-list.txt` contents, then loop through and use the `system-prompt.txt` and `user-prompt-page.txt` to generate the text itself.
+
+**Key Features:**
+
+- Retrieves OpenAI API key securely using environment variables.
+- Accepts customizable prompts and arguments for flexibility.
+- Interacts with OpenAI API to generate text responses.
+- Stores generated content in text files for easy integration.
+- Generates multiple pages for a website structure.
+- Website pages are somewhat related and consistent because they use the same facts in `user-prompt-page.txt`
+
+**Dependencies:**
+
+- decouple
+- os
+- workshop_common (custom module, please ensure it's accessible)
+- icecream
+- argparse
+- re
+- ast
+- OpenAI API key (set as an environment variable)
+
+**Usage:**
+
+1. Set up a virtual environment for python.
+3. Source in the virtual environment with `source .venv/bin/activate`
+4. Run `pip install -r requirements.txt`.
+5. Set the `PYTHONPATH` to the `../prompting` directory.
+6. Obtain an OpenAI API key and set it as an environment variable named `OPENAI_API_KEY`.
+7. Move into the `generate_site` directory.
+8. Run the code from the command line: `python <script_name.py>`
+9. Optionally, provide command-line arguments to customize behavior (see below for options).
+
+**Command-Line Arguments:**
+
+- `--temperature`: Adjusts creativity of generated text (0-1).
+- `--model`: Selects the OpenAI language model to use (e.g., `gpt-3.5-turbo`).
+- `--max_tokens`: Sets the maximum number of tokens for generated text per response.
+- `--system_prompt_file`: Specifies the file containing system message content.
+- `--user_prompt_file`, `--user_prompt_list_file`, `--user_prompt_page_file`: Specify files containing user message content for different purposes.
+- `--response_file`: Sets the file to write the initial response to.
+- `--pages`: Indicates the number of pages to generate for the website.
+- `--company`: Sets the name of the company to use in page content.
+
+**File Structure:**
+
+- The code expects specific prompt files to be present for proper execution.
+- Generated website content will be written to text files within a 'site' directory.
+
+**Additional Notes:**
+
+- Ensure the custom module `workshop_common` is available with its required functions.
+- Refer to OpenAI documentation for details on models and usage: [https://platform.openai.com/docs/api-reference](https://platform.openai.com/docs/api-reference).
