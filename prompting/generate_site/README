@@ -59,3 +59,4 @@ It will create a list of different web pages based on the `system-prompt-list.tx
 
 - Ensure the custom module `workshop_common` is available with its required functions.
 - Refer to OpenAI documentation for details on models and usage: [https://platform.openai.com/docs/api-reference](https://platform.openai.com/docs/api-reference).
+- Some of the prompts have variables inserted into them at runtime.  They are denoted by curly brackets (ex. {company} )
