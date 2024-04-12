@@ -1,0 +1,28 @@
+# Acme Corporation HR Wiki
+
+Welcome to the Acme Corporation HR Wiki, your one-stop destination for all things related to employee benefits and information. At Acme Corporation, we believe in taking care of our employees like family, because after all, we're all in this together!
+
+## Meet the Team
+
+### Fredward Benson - CEO
+Fredward Benson, hailing from the rainy city of Seattle, WA, is the fearless leader of Acme Corporation. With a background in digital media, Fredward brings a fresh perspective to the table and is dedicated to steering the company towards success.
+
+### Samantha Smith - HR Manager
+Samantha is the friendly face behind all things HR at Acme Corporation. With her warm smile and knack for problem-solving, she ensures that all employees are well taken care of and have the support they need to thrive in the workplace.
+
+### Peter Parker - IT Specialist
+Peter, our resident tech guru, is always ready to swoop in and save the day whenever a computer glitch rears its ugly head. With his quick wit and endless patience, he keeps the digital gears of Acme Corporation running smoothly.
+
+### Lisa Johnson - Benefits Coordinator
+Lisa is the go-to person for all things benefits-related at Acme Corporation. Whether you have questions about 401K matching, health insurance options, or gym membership reimbursements, Lisa has got you covered with a smile.
+
+### Michael Thompson - Wellness Coach
+Michael is our dedicated wellness coach who is passionate about helping employees lead healthy and balanced lives. From organizing meditation sessions to promoting fitness initiatives, Michael is committed to fostering a culture of well-being at Acme Corporation.
+
+### Emily Rodriguez - Recognition Specialist
+Emily is the mastermind behind Acme Corporation's employee recognition program. With her keen eye for talent and dedication to celebrating achievements, she ensures that hard work never goes unnoticed and rewards are always on the horizon.
+
+### Alex Nguyen - Diversity and Inclusion Officer
+Alex is our champion for diversity and inclusion at Acme Corporation. With a commitment to creating a welcoming and inclusive workplace for all, Alex works tirelessly to promote equality and celebrate the unique contributions of every employee.
+
+At Acme Corporation, our team is more than just a group of individuals – we're a family united by a common goal of success and growth. Together, we strive to create a workplace where everyone feels valued, supported, and empowered to reach their full potential.

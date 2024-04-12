@@ -4,7 +4,7 @@ import os
 openai_api_key = config('OPENAI_API_KEY')
 os.environ["OPENAI_API_KEY"] = openai_api_key
 
-from workshop_common import set_local_directory, simple_chat, get_file_contents, write_response_to_file, get_file_size, execute_prompt
+from workshop_common import set_local_directory, get_file_contents, write_response_to_file, execute_prompt
 from icecream import ic
 import argparse
 import re
@@ -77,7 +77,6 @@ if __name__ == "__main__":
         filename = clean_text + '.txt'
         
         return filename
-
 
     # generate individual pages
     for page in page_list:
